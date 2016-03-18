@@ -1,0 +1,2 @@
+# MML-template-generator
+cdefgabやドレミ等、最小限の入力から、各種MMLコンパイラがコンパイルできて即演奏できるようなMMLを出力する
