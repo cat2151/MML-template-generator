@@ -68,6 +68,9 @@ function() {
       if (compiler == "note.x") { // [イメージ] "A @0v15cde"
         return getABC(ch) + " " + "@0v15" + inMml + "\n";
       }
+      if (compiler == "NRTDRV") { // [イメージ] "A cde"
+        return getABC(ch) + " " + "" + inMml + "\n";
+      }
       return "";
     }
     function genTail() {
