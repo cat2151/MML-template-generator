@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="generatorApp">
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="services.js"></script>
+    <script src="controller.js"></script>
+  </head>
+  <body>
+    <div ng-controller="generatorController">
+      <h1>MML-template-generator</h1>
+      入力MMLフォーマット:
+      <select ng-model="inputFormat" ng-init="inputFormat='AUTO'" ng-change="generate()">
+        <option value="AUTO">自動判別（低精度）</option>
+        <option value="SiON">SiON(すたどんたんでお馴染み)</option>
+        <option value="ストトン">ストトン(サクラでお馴染み)</option>
+      </select>
+      <br/>
+      <textarea cols="40" rows="2"
+        ng-model="inputText"
+        placeholder="MMLを入力してください [例] cde [例] ド [例] ど [例] c;e;g"
+        ng-change="generate()"
+      ></textarea>
+      <br/>
+      中間MMLフォーマット:SiON
+      <br/>
+      <textarea cols="40" rows="1"
+        ng-model="middleText"
+        placeholder="中間MML"
+      ></textarea>
+      <br/>
+      出力MMLフォーマット:
+      <select ng-model="compiler" ng-init="compiler='mckc'" ng-change="generate()">
+        <option value="mckc">mckc(ファミコン、mck、nsf)</option>
+        <option value="note.x">note.x(X680x0、mxdrv、mdx)</option>
+      </select>
+      <br/>
+      <textarea cols="40" rows="10"
+        ng-model="generatedText"
+        placeholder="MML変換結果"
+      ></textarea>
+    </div>
+    <div>
+      <a href="https://github.com/cat2151/MML-template-generator/">ソースファイル githubリポジトリ</a>
+    </div>
+  </body>
+</html>
