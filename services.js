@@ -52,6 +52,12 @@ function() {
       if (compiler == "nsc") { // nsd.lib [イメージ] "#Code "../../bin/nsd.bin" bgm(0){ TR1 ceg }
         return "#Code " + '"' +"../../bin/nsd.bin" + '"' + " bgm(0) {\n";
       }
+      if (compiler == "GBMC") { // GBMC [イメージ] "#mode 3"+改行+''A v15cder" [補足] 末尾rは音を止める用
+        return "#@0 {0123456789ABCDEFFEDCBA9876543210}\n" + "#mode 3\n";
+      }
+      if (compiler == "HuSIC") { // [イメージ] "@WT0={～}"+改行+"A W0v31 cdg"
+        return "@WT0={\n $13,$19,$1b,$18,$13,$0f,$10,$14,\n $1b,$1f,$1e,$19,$12,$0c,$0a,$0d,\n $12,$15,$13,$0d,$06,$01,$00,$04,\n $0b,$0f,$10,$0c,$07,$04,$06,$0c\n}\n";
+      }
       return "";
     }
     function gen1ch(inMml, ch) {
@@ -70,6 +76,19 @@ function() {
       }
       if (compiler == "NRTDRV") { // [イメージ] "A cde"
         return getABC(ch) + " " + "" + inMml + "\n";
+      }
+      if (compiler == "GBMC") { // [イメージ] "#mode 3"+改行+''A v15cder" [補足] 末尾rは音を止める用
+        if (ch < 2) return "'" + getABC(ch) + " v15" + inMml + "r\n";
+        if (ch == 2) return "'" + getABC(ch) + " @0v3" + inMml + "r\n";
+      }
+      if (compiler == "HuSIC") { // [イメージ] "@WT0={～}"+改行+"A W0v31cdg"
+        return getABC(ch) + " " + "W0v31" + inMml + "\n";
+      }
+      if (compiler == "PicoMML") { // [イメージ] "@t1 cde"
+        return "@t" + (ch + 1) + " " + inMml + "\n";
+      }
+      if (compiler == "sakura") { // [イメージ] "トラック1 c"
+        return "トラック" + (ch + 1) + " " + inMml + "\n";
       }
       return "";
     }
