@@ -58,6 +58,9 @@ function() {
       if (compiler == "HuSIC") { // [イメージ] "@WT0={～}"+改行+"A W0v31 cdg"
         return "@WT0={\n $13,$19,$1b,$18,$13,$0f,$10,$14,\n $1b,$1f,$1e,$19,$12,$0c,$0a,$0d,\n $12,$15,$13,$0d,$06,$01,$00,$04,\n $0b,$0f,$10,$0c,$07,$04,$06,$0c\n}\n";
       }
+      if (compiler == "MGSC") { // [イメージ] "#opll_mode 0"+改行+"9 v15 @0 cde"
+        return "#opll_mode 0\n";
+      }
       return "";
     }
     function gen1ch(inMml, ch) {
@@ -89,6 +92,9 @@ function() {
       }
       if (compiler == "sakura") { // [イメージ] "トラック1 c"
         return "トラック" + (ch + 1) + " " + inMml + "\n";
+      }
+      if (compiler == "MGSC") { // [イメージ] "#opll_mode 0"+改行+"9 v15 @0 cde"
+        return "" + "9abcdefgh".substr(ch, 1) + " v15@0" + inMml + "\n";
       }
       return "";
     }
