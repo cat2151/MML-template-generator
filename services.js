@@ -64,6 +64,7 @@ function() {
       return "";
     }
     function gen1ch(inMml, ch) {
+      inMml = inMml.replace( /\n/g , '' );  // 以降、1行 = 1track が前提なので。
       if (compiler == "mckc") { // [イメージ] "A v15cde"
         if (ch < 2) return getABC(ch) + " " + "v15" + inMml + "\n"; // AB : pulse
         if (ch == 2) return getABC(ch) + " " + inMml + "\n"; // C : triangle
