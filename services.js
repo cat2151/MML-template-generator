@@ -47,7 +47,10 @@ function() {
       ch++;
     });
     outMml += genTail();
+    Pico.pause();
+    Pico.play(Sionic(outMml));
     return outMml;
+
     function genHead() {
       if (compiler == "nsc") { // nsd.lib [イメージ] "#Code "../../bin/nsd.bin" bgm(0){ TR1 ceg }
         return "#Code " + '"' +"../../bin/nsd.bin" + '"' + " bgm(0) {\n";
