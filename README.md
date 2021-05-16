@@ -1,12 +1,12 @@
-# MML-template-generator
+# mml-template-generator
 cdefgabやドレミ等、最小限の入力から、  
 各種MMLコンパイラがコンパイルできて即演奏できるようなMMLを出力する  
 
 # DEMO
-http://cat2151.github.io/MML-template-generator/
+https://cat2151.github.io/mml-template-generator/
 
 # 対応MML一覧
-https://github.com/cat2151/MML-template-generator/wiki/MML%E4%B8%80%E8%A6%A7
+https://github.com/cat2151/mml-template-generator/wiki/MML%E4%B8%80%E8%A6%A7
 
 # 目的
 各種MMLコンパイラでエラーにならない、「音が出る」最小限のMMLを提供する。  
