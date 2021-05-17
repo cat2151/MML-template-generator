@@ -19,6 +19,7 @@ function() {
     if (inputFormat == "ストトン") return sutoton();
     if (inputFormat == "AUTO") return auto();
     return "";
+
     function sion() {
       return inputText;
     }
@@ -47,8 +48,10 @@ function() {
       ch++;
     });
     outMml += genTail();
+
     Pico.pause();
-    Pico.play(Sionic(outMml));
+    Pico.play(Sionic(sionmml));
+
     return outMml;
 
     function genHead() {

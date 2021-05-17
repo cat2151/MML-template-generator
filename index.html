@@ -31,6 +31,7 @@
         ng-model="middleText"
         placeholder="中間MML"
       ></textarea>
+      <button ng-click='generate()'>play</button>
       <br/>
       出力MMLフォーマット:
       <select ng-model="compiler" ng-init="compiler='mckc'" ng-change="generate()">
